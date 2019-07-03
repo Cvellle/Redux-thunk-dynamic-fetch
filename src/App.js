@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-
 import { getRepos } from './redux';
 
 // App.js
@@ -31,17 +29,17 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <h1>I AM AN ASYNC APP!!!</h1>
-        <strong>Github username: </strong>
+        <h1>Get the list of guitar manufacturers and Hall of fame rock stars</h1>
+        <h2>Change the list: </h2>
         <select
         onChange={(ev) => {
             let searching = "cjNQuxvlGq";
-            let guitars = "Guitar manufacterors";
-            let stars = "Rock hall of fame members";
+            let guitars = "Guitar manufacturers";
+            let stars = "Rock Hall of fame members";
 
             switch(ev.target.value) {
               case guitars:
-                searching = "cjNQuxvlGq";
+                searching = "cjNQuxvlGq";     //145yc7    1fjbzr
                 break;
               case stars:
                 searching = "bUWNjaXuKW";
@@ -56,8 +54,8 @@ export class App extends Component {
             this.updateRepoList(searching);
           }
             }>
-          <option value="Guitar manufacterors">Guitar manufacterors</option>
-          <option value="Rock hall of fame members">Rock hall of fame members</option>
+          <option value="Guitar manufacturers">Guitar manufacturers</option>
+          <option value="Rock Hall of fame members">Rock Hall of fame members</option>
         </select>
 
         <ul>

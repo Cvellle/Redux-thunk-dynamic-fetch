@@ -12,7 +12,7 @@ export const clearRepos = () => ({ type: "CLEAR_REPOS" });
 
 // 1
 export const getRepos = username => dispatch => {
-  const url = `http://www.json-generator.com/api/json/get/${username}?indent=2`;
+  const url = `https://www.json-generator.com/api/json/get/${username}?indent=2`;
 
   return fetch(url)
     .then(function(result) {
