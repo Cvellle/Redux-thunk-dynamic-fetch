@@ -6,17 +6,12 @@ import { getRepos } from './redux';
 export class App extends Component {
 
   state = {
-    searchKey: 'guitars',
     urlPart: "cjNQuxvlGq"
   };
 
   componentDidMount() {
     this.updateRepoList(this.state.urlPart);
   }
-
-//  componentDidUpdate() {
-//     this.updateRepoList(this.state.urlPart);
-//   }
 
   updateRepoList = urlPart => {
     this.props.getRepos(urlPart);
