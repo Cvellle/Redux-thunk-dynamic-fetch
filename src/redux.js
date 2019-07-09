@@ -11,8 +11,8 @@ export const addRepos = repos => ({
 export const clearRepos = () => ({ type: "CLEAR_REPOS" });
 
 // 1
-export const getRepos = username => dispatch => {
-  const url = `https://www.json-generator.com/api/json/get/${username}?indent=2`;
+export const getRepos = urlPart => dispatch => {
+  const url = `https://www.json-generator.com/api/json/get/${urlPart}?indent=2`;
 
   return fetch(url)
     .then(function(result) {
@@ -28,8 +28,8 @@ export const getRepos = username => dispatch => {
 };
 
 //2
-// export const getRepos = username => async dispatch => {
-//   const url = `https://api.github.com/users/${username}/repos?sort=updated`;
+// export const getRepos = urlPart => async dispatch => {
+//   const url = `https://api.github.com/users/${urlPart}/repos?sort=updated`;
 //   const repos = await fetch(url).then(response => response.json());
 //   dispatch(addRepos(repos));
 // };
@@ -59,6 +59,8 @@ export const getRepos = username => dispatch => {
 //       // });
 //   }
 // }
+
+
 
 // reducers.js
 export const repos = (state = [], action) => {
