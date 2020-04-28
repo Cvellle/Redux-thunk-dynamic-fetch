@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getRepos } from './redux';
 
-
 export class App extends Component {
-
   state = {
     urlPart: "cjNQuxvlGq"
   };
@@ -18,27 +16,27 @@ export class App extends Component {
   }
 
   changeSearch = ev => {
-      let searching = "cjNQuxvlGq";
-      let guitars = "Guitar manufacturers";
-      let stars = "Rock Hall of fame members";
+    let searching = "cjNQuxvlGq";
+    let guitars = "Guitar manufacturers";
+    let stars = "Rock Hall of fame members";
 
-      switch(ev.target.value) {
-        case guitars:
-          searching = "cjNQuxvlGq";     //145yc7    1fjbzr
-          break;
-        case stars:
-          searching = "bUWNjaXuKW";
-          break;
-        default:
-          searching = "cjNQuxvlGq";
-      }
-      
-      this.setState({
+    switch (ev.target.value) {
+      case guitars:
+        searching = "cjNQuxvlGq";     //145yc7    1fjbzr
+        break;
+      case stars:
+        searching = "bUWNjaXuKW";
+        break;
+      default:
+        searching = "cjNQuxvlGq";
+    }
+
+    this.setState({
       urlPart: searching
-      })
-      this.updateRepoList(searching);
+    })
+    this.updateRepoList(searching);
   }
-   
+
 
 
   render() {
@@ -50,11 +48,10 @@ export class App extends Component {
           <option value="Guitar manufacturers">Guitar manufacturers</option>
           <option value="Rock Hall of fame members">Rock Hall of fame members</option>
         </select>
-
         <ul>
           {this.props.repos.map((ob, index) => (
             <li key={index}>
-                {ob.name}
+              {ob.name}
             </li>
           ))}
         </ul>
@@ -62,7 +59,6 @@ export class App extends Component {
     );
   }
 }
-
 
 const mapStateToProps = (state, ownProps) => ({ repos: state.repos });
 const mapDispatchToProps = { getRepos };
